@@ -25,7 +25,6 @@ function initCore() {
     initPublicationFilters();
     enhanceResearchCards();
     initCredentialsTooltips();
-    addLeadershipBadges();
     initPublicationsFilter();
 
     // Handle contact form submission
@@ -403,52 +402,6 @@ function initializeInteractions() {
     }
 }
 
-// Add leadership badges to timeline items
-function addLeadershipBadges() {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    if (!timelineItems.length) return;
-
-    const badges = [
-        { icon: 'star', text: 'Senior Leadership' },
-        { icon: 'star', text: 'Academic Leadership' },
-        { icon: 'star', text: 'Department Leadership' },
-        { icon: 'star', text: 'Research Leadership' }
-    ];
-
-    timelineItems.forEach((item, index) => {
-        // Create badge if it doesn't exist
-        if (!item.querySelector('.leadership-badge')) {
-            const badge = document.createElement('div');
-            badge.className = 'leadership-badge';
-
-            const icon = document.createElement('i');
-            icon.className = `fas fa-${badges[index % badges.length].icon}`;
-
-            const text = document.createElement('span');
-            text.textContent = badges[index % badges.length].text;
-
-            badge.appendChild(icon);
-            badge.appendChild(text);
-
-            // Add the badge to the timeline content
-            const content = item.querySelector('.timeline-content');
-            if (content) {
-                content.appendChild(badge);
-            }
-        }
-
-        // Add animation classes
-        item.classList.add('fade-in');
-        item.style.animationDelay = `${index * 0.2}s`;
-
-        // Animate on scroll
-        observeElement(item, () => {
-            setTimeout(() => {
-                item.classList.add('show');
-            }, index * 200);
-        });
-    });
-}
 
 // Enhance sections with additional visual elements
 function enhanceSection(section) {
