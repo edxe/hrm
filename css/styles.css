@@ -15,7 +15,7 @@
 :root {
     /* Color palette */
     --dark-gray: #565759;       /* Sophisticated dark gray */
-    --burnt-orange: #BF6430;    /* Warm burnt orange accent */
+    --burnt-orange: #e27f3b;    /* Warm burnt orange accent */
     --deep-rust: #8C4332;       /* Rich rust/burgundy */
     --light-gray: #BFBFBF;      /* Light gray for backgrounds */
     --near-black: #0D0D0D;      /* Near black for text */
@@ -50,7 +50,7 @@
     --spacing-xxl: 5rem;
 
     /* Typography */
-    --font-primary: 'Georgia', serif;
+    --font-primary: 'Arial', sans-serif;
     --font-secondary: 'Arial', sans-serif;
     --font-size-base: 16px;
     --line-height-base: 1.6;
@@ -403,7 +403,8 @@ body.sidebar-hidden {
 
 .nav-link:hover, .nav-link.active {
     background-color: var(--light-gray);
-    color: var(--white);
+    color: var(--burnt-orange);
+    /*color: var(--white);*/
 }
 
 .social-nav {
