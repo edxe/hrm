@@ -403,7 +403,7 @@ body.sidebar-hidden {
 
 .nav-link:hover, .nav-link.active {
     background-color: var(--light-gray);
-    color: var(--burnt-orange);
+    color: var(--hrm-blue);
     /*color: var(--white);*/
 }
 
@@ -513,8 +513,12 @@ main {
 
 .vision-section .section-subtitle {
     /*color: var(--light-gray);*/
-    color: var(--primary-color);
+    color: var(--burnt-orange);
     font-size: 1.5rem;
+
+}
+.pointer{
+    cursor: pointer;
 }
 
 .vision-statement h3 {
@@ -2262,7 +2266,7 @@ main {
 .about-img {
     width: 100%;
     height: auto;
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     object-fit: cover;
     border: 3px solid rgba(255, 255, 255, 0.2);
     margin-bottom: var(--spacing-md);
