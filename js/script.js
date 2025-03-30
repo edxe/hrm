@@ -861,3 +861,16 @@ function initPublicationsFilter() {
         });
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    var sendEmailButtons = document.querySelectorAll('#contact-submit');
+
+    sendEmailButtons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            var email = document.querySelectorAll('#email')[0].value;
+            var subject = document.querySelectorAll('#subject')[0].value;
+            var emailBody = document.querySelectorAll('#message')[0].value;
+            document.location = "mailto:" + email + "?subject=" + subject + "&body=" + emailBody ;
+        });
+    });
+});
