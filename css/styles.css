@@ -10,7 +10,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.color-blue{color:#122e53}
 
 
 :root {
@@ -20,6 +19,7 @@
     --deep-rust: #8C4332;       /* Rich rust/burgundy */
     --light-gray: #BFBFBF;      /* Light gray for backgrounds */
     --near-black: #0D0D0D;      /* Near black for text */
+    --hrm-blue: #122e53;
     --white: #ffffff;
     --off-white: #f8f8f8;
 
@@ -30,7 +30,7 @@
     --light-gray-dark: rgba(191, 191, 191, 0.9);
 
     /* Functional color assignments */
-    --primary-color: var(--dark-gray);
+    --primary-color: var(--hrm-blue);
     --secondary-color: var(--deep-rust);
     --accent-color: var(--burnt-orange);
     --accent-color-light: var(--burnt-orange-light);
@@ -303,7 +303,7 @@ img {
     left: 0;
     width: var(--side-nav-width);
     height: 100vh;
-    background-color: var(--dark-gray);
+    background-color: var(--hrm-blue);
     color: var(--white);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     padding: var(--spacing-lg) 0;
@@ -402,7 +402,7 @@ body.sidebar-hidden {
 }
 
 .nav-link:hover, .nav-link.active {
-    background-color: var(--burnt-orange);
+    background-color: var(--light-gray);
     color: var(--white);
 }
 
@@ -513,6 +513,7 @@ main {
 .vision-section .section-subtitle {
     /*color: var(--light-gray);*/
     color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
 .vision-statement h3 {
