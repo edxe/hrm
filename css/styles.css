@@ -403,7 +403,7 @@ body.sidebar-hidden {
 
 .nav-link:hover, .nav-link.active {
     background-color: var(--light-gray);
-    color: var(--burnt-orange);
+    color: var(--hrm-blue);
     /*color: var(--white);*/
 }
 
