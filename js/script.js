@@ -113,16 +113,6 @@ function handleScroll() {
         }
     }
 
-    // Hide scroll indicator when user starts scrolling
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    if (scrollIndicator && currentScrollTop > 100) {
-        scrollIndicator.style.opacity = '0';
-        scrollIndicator.style.pointerEvents = 'none';
-    } else if (scrollIndicator && currentScrollTop <= 100) {
-        scrollIndicator.style.opacity = '1';
-        scrollIndicator.style.pointerEvents = 'auto';
-    }
-
     // Update last scroll position
     lastScrollTop = currentScrollTop;
 }
