@@ -46,8 +46,19 @@ function setupEventListeners() {
             const sideNav = document.querySelector('.side-nav');
             if (sideNav) {
                 sideNav.classList.toggle('active');
-                sideNav.classList.remove('hidden'); // Remove hidden class when toggling mobile menu
-                document.body.classList.remove('sidebar-hidden');
+                // Prevent body scroll when mobile menu is active
+                document.body.style.overflow = sideNav.classList.contains('active') ? 'hidden' : '';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const sideNav = document.querySelector('.side-nav');
+            if (sideNav && sideNav.classList.contains('active')) {
+                if (!sideNav.contains(e.target) && !navToggle.contains(e.target)) {
+                    sideNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             }
         });
     }
@@ -354,14 +365,20 @@ function initializeInteractions() {
             const sideNav = document.querySelector('.side-nav');
             if (sideNav) {
                 sideNav.classList.remove('active');
+                // Restore body scroll
+                document.body.style.overflow = '';
             }
 
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
+                // Get the target position
+                const targetPosition = targetElement.offsetTop;
+                
+                // Smooth scroll to target
                 window.scrollTo({
-                    top: targetElement.offsetTop,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
 
