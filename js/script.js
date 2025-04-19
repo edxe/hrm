@@ -891,3 +891,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        // Remove active class from all slides and indicators
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Add active class to current slide and indicator
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
+    }
+    
+    // Event listeners for controls
+    prevBtn.addEventListener('click', function() {
+        let newIndex = currentSlide - 1;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        showSlide(newIndex);
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        let newIndex = currentSlide + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        showSlide(newIndex);
+    });
+    
+    // Event listeners for indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            showSlide(index);
+        });
+    });
+    
+    // Auto-advance slides every 5 seconds
+    setInterval(function() {
+        let newIndex = currentSlide + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        showSlide(newIndex);
+    }, 5000);
+});
