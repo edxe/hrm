@@ -610,7 +610,7 @@ main {
 
 /* Hero Section Specific */
 .hero-title {
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-md);
     color: var(--primary-color);
     font-weight: 700;
@@ -701,7 +701,7 @@ main {
     }
 
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 1.5rem;
     }
 
     .hero-subtitle {
@@ -791,7 +791,7 @@ main {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-md);
     color: var(--primary-color);
     font-weight: 700;
@@ -1822,7 +1822,7 @@ main {
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     .vision-pillars {
@@ -1836,7 +1836,7 @@ main {
     }
 
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.0rem;
     }
 
     .hero-subtitle {
@@ -1937,7 +1937,7 @@ main {
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 1.5rem;
     }
 
     .hero-subtitle {
@@ -1996,7 +1996,7 @@ main {
 
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 1.7rem;
     }
 
     .hero-subtitle {
@@ -2497,18 +2497,18 @@ body.sidebar-hidden .hero-content {
 }
 
 body.sidebar-hidden .hero-title {
-    font-size: 5.5rem;
+    font-size: 3.0rem;
 }
 
 @media (max-width: 992px) {
     body.sidebar-hidden .hero-title {
-        font-size: 4rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 768px) {
     body.sidebar-hidden .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     body.sidebar-hidden .hero-content {
@@ -2518,7 +2518,7 @@ body.sidebar-hidden .hero-title {
 
 @media (max-width: 576px) {
     body.sidebar-hidden .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.0rem;
     }
 }
 
@@ -2767,6 +2767,8 @@ body.sidebar-hidden .research-card {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: transform 30s ease;
+    transform-origin: center;
     z-index: 0;
     image-rendering: -webkit-optimize-contrast; /* For Chrome and Safari */
     image-rendering: crisp-edges; /* For Firefox */
@@ -2811,3 +2813,80 @@ body.sidebar-hidden .research-card {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
+/* Videos Section */
+.videos-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-alt);
+}
+
+.videos-section .section-header h2 {
+    color: var(--primary-color);
+}
+
+.videos-section .section-subtitle {
+    color: var(--dark-gray);
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.video-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Media Queries for Videos Section */
+@media (max-width: 992px) {
+    .videos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Personal Carousel Container Styles */
